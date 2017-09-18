@@ -15,14 +15,12 @@ namespace Dictionary
                 { "fa", "tree" }
             };
 
-            //add more words to your dictionary
             Dictionary.Add("macska", "cat");
             AddWord("kutya", "dog");
             RemoveWord("alma");
             AddWord("kutya", "canine");
             AddWord("hajo", "ship");
             AddWord("boldog", "happy");
-
 
             foreach (KeyValuePair<string, string> item in Dictionary)
             {
@@ -31,10 +29,11 @@ namespace Dictionary
 
             Console.WriteLine(TranslateToEnglish("fa"));
 
+            Console.WriteLine(TranslateToHungarian("happy"));
+
             Console.ReadLine();
         }
 
-        //Implement this method.It should add the given key-value pair to the the dictionary
         public static void AddWord(string hungarianWord, string englishWord)
         {
             if (Dictionary.ContainsKey(hungarianWord))
@@ -43,25 +42,25 @@ namespace Dictionary
                 Dictionary.Add(hungarianWord, englishWord);
         }
 
-
-        //Implement this method.It should remove the key-value pair by the given key from the dictionary
         public static void RemoveWord(string hungarianWord)
         {
-             Dictionary.Remove(hungarianWord);
+            Dictionary.Remove(hungarianWord);
         }
 
-        // Implement a method which works as a translator from Hungarian to English
-        // Example: you give it a parameter "fa" and it's output is "tree"
         public static string TranslateToEnglish(string hungarian)
         {
             return Dictionary[hungarian];
         }
 
-        // Implement a method which works as a translator from English to Hungarian
-        // Example: you give it a parameter "apple" and it's output is "alma"
         public static string TranslateToHungarian(string english)
         {
-
+            string searchWord = "";
+            foreach (KeyValuePair<string, string> item in Dictionary)
+            {
+                if (item.Value == english)
+                    searchWord = item.Key;
+            }
+            return searchWord;
         }
     }
 }
