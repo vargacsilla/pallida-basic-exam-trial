@@ -33,4 +33,5 @@ The application is accepted if:
 
 ###  What is the difference between id and class in CSS? [2p]
 #### Your answer: 
-[add your answer here]
+
+The main difference is that id's are unique, while classes are not. There should be only one element with a specific id on a page, and one element can have only one id. On the contrary class is a bigger category than id - more elements can belong to the same class (you can tag more elements with the same class), and one element can have several class tags.
