@@ -20,12 +20,16 @@ namespace Dictionary
             AddWord("kutya", "dog");
             RemoveWord("alma");
             AddWord("kutya", "canine");
+            AddWord("hajo", "ship");
+            AddWord("boldog", "happy");
 
 
             foreach (KeyValuePair<string, string> item in Dictionary)
             {
                 Console.WriteLine("Hungarian: {0} - English: {1}", item.Key, item.Value);
             }
+
+            Console.WriteLine(TranslateToEnglish("fa"));
 
             Console.ReadLine();
         }
@@ -46,18 +50,18 @@ namespace Dictionary
              Dictionary.Remove(hungarianWord);
         }
 
-        //// Implement a method which works as a translator from Hungarian to English
-        //// Example: you give it a parameter "fa" and it's output is "tree"
-        //public static string TranslateToEnglish(string hungarian)
-        //{
+        // Implement a method which works as a translator from Hungarian to English
+        // Example: you give it a parameter "fa" and it's output is "tree"
+        public static string TranslateToEnglish(string hungarian)
+        {
+            return Dictionary[hungarian];
+        }
 
-        //}
+        // Implement a method which works as a translator from English to Hungarian
+        // Example: you give it a parameter "apple" and it's output is "alma"
+        public static string TranslateToHungarian(string english)
+        {
 
-        //// Implement a method which works as a translator from English to Hungarian
-        //// Example: you give it a parameter "apple" and it's output is "alma"
-        //public static string TranslateToHungarian(string english)
-        //{
-
-        //}
+        }
     }
 }
