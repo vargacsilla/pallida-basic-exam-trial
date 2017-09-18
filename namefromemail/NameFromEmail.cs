@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 namespace NameFromEmail
 {
@@ -12,6 +13,18 @@ namespace NameFromEmail
             //accents does not matter 
             Console.WriteLine(NameFromEmail("elek.viz@exam.com"));
             Console.ReadLine();
+        }
+
+        private static string NameFromEmail(string email)
+        {
+            string[] names = email.Split(new Char[] { '.', '@' }); ;
+            string name = names[0] + " " + names[1];
+            return UpperFirst(name);
+        }
+
+        private static string UpperFirst(string name)
+        {
+            
         }
     }
 }
