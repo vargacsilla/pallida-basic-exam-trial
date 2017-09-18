@@ -7,13 +7,24 @@ namespace UrlsFromHandles
     {
         static void Main(string[] args)
         {
-            // Create a function that takes a list of GitHub handles as input and returns a list of strings that represents
-            // GitHub url's under Green Fox Academy organization in the following format: "https://github.com/greenfox-academy/teststudent"
+            List<string> gitHubUrls = UrlsFromHandles(new List<string> { "ghhandle1", "ghhandle2" });
 
-            // example:
-            // input: ["ghhandle1", "ghhandle2"]
-            // output: ["https://github.com/greenfox-academy/ghhandle1", "https://github.com/greenfox-academy/ghhandle2"]
-            List<string> gitHubUrls = UrlsFromHandles(new List<string> {"ghhandle1", "ghhandle2"});
+            for (int i = 0; i < gitHubUrls.Count; i++)
+            {
+                Console.WriteLine(gitHubUrls[i]);
+            }
+            Console.ReadLine();
+        }
+
+        private static List<string> UrlsFromHandles(List<string> list)
+        {
+            string insertText = "https://github.com/greenfox-academy/";
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] = insertText + list[i];
+            }
+            return list;
         }
     }
 }
