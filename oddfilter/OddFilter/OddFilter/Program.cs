@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace OddFilter
@@ -23,9 +23,9 @@ namespace OddFilter
 
             for (int i = 0; i < list.Count; i++)
             {
-                if (oddElements[i] % 2 != 0)
+                if (list[i] % 2 != 0)
                 {
-                    selectedElements.Add(oddElements[i]);    
+                    selectedElements.Add(list[i]);
                 }
             }
             return selectedElements;
