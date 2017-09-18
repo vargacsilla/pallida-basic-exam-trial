@@ -17,8 +17,10 @@ namespace Dictionary
 
             //add more words to your dictionary
             Dictionary.Add("macska", "cat");
-            Dictionary.Add("kutya", "dog");
+            AddWord("kutya", "dog");
             Dictionary.Remove("alma");
+            AddWord("kutya", "canine");
+            
 
             foreach (KeyValuePair<string, string> item in Dictionary)
             {
@@ -29,16 +31,20 @@ namespace Dictionary
         }
 
         //Implement this method.It should add the given key-value pair to the the dictionary
-        //public static void AddWord(string hungarianWord, string englishWord)
-        //{
-
-        //}
+        public static void AddWord(string hungarianWord, string englishWord)
+        {
+            if (Dictionary.ContainsKey(hungarianWord))
+                return;
+            else
+                Dictionary.Add(hungarianWord, englishWord);
+            }
+        }
 
         //Implement this method.It should remove the key-value pair by the given key from the dictionary
-        //public static void RemoveWord(string hungarianWord)
-        //{
+        public static void RemoveWord(string hungarianWord)
+        {
 
-        //}
+        }
 
         // Implement a method which works as a translator from Hungarian to English
         // Example: you give it a parameter "fa" and it's output is "tree"
@@ -53,5 +59,4 @@ namespace Dictionary
         {
 
         }
-    }
 }
